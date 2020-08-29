@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Classic Pokemon Battle: Battle Time!</title>
+</head>
+<body>
+    <h1 id="title-text">Battle!</h1>
+
+    <div id="battle-grid">
+        <div id="player-selection"></div>
+        <h3>VS</h3>
+        <img id="computer-gengar" src="https://24.media.tumblr.com/94a98ef70a98825b1ca2eae643306ebc/tumblr_mll74blaLZ1r0y8j6o1_400.gif" alt="Gengar Attacking">
+        <p>Player:</p>
+        <span></span>
+        <h3 class="player-title-gengar">Gengar:</h3>
+        <span></span>
+        <span></span>
+        <p id="computer-health"></p>
+
+        <!-- ATTACK BUTTONS -->
+          <p id="player-health"></p>
+          <span></span>
+          <span></span>
+          <div id="player-attack">
+            <button onclick="AttackOne()" id="attack-one">Attack One</button>
+            <button onclick="AttackTwo()" id="attack-two">Attack Two</button>
+            <button onclick="AttackThree()" id="attack-three">Attack Three</button>
+            <button onclick="AttackFour()" id="attack-four">Attack Four</button>
+          </div>
+      </div>
+    </div>
+
+    <div id="battle-winner"><h1></h1></div>
+    <button onclick="playAgain()" id="play-again">Play Again</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="js/battle.js"></script>
+</body>
+</html>

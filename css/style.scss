@@ -1,3 +1,5 @@
+@import "battle";
+
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +18,7 @@ body {
   font-size: 38px;
   text-decoration: underline;
   font-family: 'Russo One', sans-serif;
+  letter-spacing: 2px;
 
     #pokemon-word {
         color: rgb(255, 0, 0);
@@ -30,31 +33,27 @@ body {
 #choose-player {
     letter-spacing: 2px;
     font-size: 24px;
-    margin: 15vw 0vw 10vw 0vw;
+    margin: 10vw 0vw 5vw 0vw;
 }
 
 #select-player {
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
-    margin: 5vw;
+    margin: 3vw;
     object-fit: cover;
     padding: 20px;
+    text-align: center;
 
-      #pikachu {
-          width: 65%;
-      }
+      img {
+      width: 65%;
+      padding: 5px;
+    }
 
-      #jigglypuff {
-          width: 95%;
-      }
-
-      #charmander {
-          width: 90%;
-      }
-
-      #player-title {
+      .player-title {
           padding: 15px;
+          font-size: 18px;
+          text-align: center;
       }
 }
