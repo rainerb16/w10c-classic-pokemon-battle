@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-family: 'Press Start 2P', cursive;
+    background-color: rgb(248, 248, 248);
+}
+
+#title-text {
+  margin: 3vw;
+  font-size: 38px;
+  text-decoration: underline;
+  font-family: 'Russo One', sans-serif;
+
+    #pokemon-word {
+        color: rgb(255, 0, 0);
+    }
+}
+
+#eight-bit {
+    color: red;
+    font-size: 22px;
+}
+
+#choose-player {
+    letter-spacing: 2px;
+    font-size: 24px;
+    margin: 15vw 0vw 10vw 0vw;
+}
+
+#select-player {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    align-items: center;
+    justify-items: center;
+    margin: 5vw;
+    object-fit: cover;
+    padding: 20px;
+
+      #pikachu {
+          width: 65%;
+      }
+
+      #jigglypuff {
+          width: 95%;
+      }
+
+      #charmander {
+          width: 90%;
+      }
+
+      #player-title {
+          padding: 15px;
+      }
+}

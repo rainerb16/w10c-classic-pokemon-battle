@@ -1,1 +1,32 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Classic Pokemon Battle</title>
+</head>
+<body>
+    <h1 id="title-text">CLASSIC <em id="pokemon-word">POKEMON</em> BATTLE</h1>
+    <h1 id="eight-bit"><em>IN 8-BIT</em></h1>
+
+    <h2 id="choose-player">Choose your player:</h2>
+    <div id="select-player">
+        <img onclick="pikachuClick()" id="pikachu" src="https://26.media.tumblr.com/tumblr_m3245olhHC1rrfi85o1_500.gif" alt="Pikachu with Lightening">
+
+        <img onclick="jigglypuffClick()" id="jigglypuff" src="https://thumbs.gfycat.com/ClearGranularDuckling-small.gif" alt="Jigglypuff Jumping">
+
+        <img onclick="charmanderClick()" id="charmander" src="https://thumbs.gfycat.com/EcstaticGloomyCavy-small.gif" alt="Charmander Bouncing">
+
+        <h3 onclick="pikachuClick()" id="player-title">PIKACHU</h3>
+        <h3 onclick="jigglypuffClick()" id="player-title">JIGGLYPUFF</h3>
+        <h3 onclick="charmanderClick()" id="player-title">CHARMANDER</h3>
+    
+      </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
