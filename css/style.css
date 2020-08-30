@@ -17,8 +17,8 @@
 #battle-grid #player-attack {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 2fr;
-      grid-template-columns: 2fr 2fr;
+  -ms-grid-columns: 2fr;
+      grid-template-columns: 2fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -45,7 +45,7 @@
 
 button {
   font-family: 'Press Start 2P', cursive;
-  font-size: 10px;
+  font-size: 11px;
   padding: 10px;
   background-color: #ff6a6a;
   color: black;
@@ -53,17 +53,13 @@ button {
   -webkit-box-shadow: 2px 0px 4px grey;
           box-shadow: 2px 0px 4px grey;
   text-align: center;
-  width: 10vw;
+  width: 17vw;
   margin: 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
   overflow-wrap: break-word;
-}
-
-#play-again {
-  margin: 5vw;
 }
 
 * {
@@ -105,31 +101,34 @@ body {
 }
 
 #title-text {
-  margin: 2vw 0vw 5vw 0vw;
+  margin: 0vw 0vw 5vw 15vw;
   font-size: 38px;
   text-decoration: underline;
   font-family: 'Russo One', sans-serif;
   letter-spacing: 2px;
+  color: red;
 }
 
-#title-text #pokemon-word {
-  color: red;
+#title-text #logo {
+  width: 30%;
+  padding: 20px;
 }
 
 #eight-bit {
   color: red;
   font-size: 22px;
+  text-decoration: underline;
 }
 
 #pokeball {
   width: 5%;
-  margin-top: 2vh;
+  margin-top: 3vh;
 }
 
 #choose-player {
   letter-spacing: 2px;
   font-size: 24px;
-  margin: 5vw 0vw 5vw 0vw;
+  margin: 3vw 0vw 7vw 0vw;
 }
 
 #select-player {
@@ -141,7 +140,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  margin: 3vw;
+  margin: 0vw 3vw 3vw 3vw;
   -o-object-fit: cover;
      object-fit: cover;
   padding: 20px;
