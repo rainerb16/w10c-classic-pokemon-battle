@@ -9,6 +9,8 @@
   <title>Classic Pokemon Battle: Battle Time!</title>
 </head>
 <body>
+    <audio id="battle-music" src="audio/battle.mp3" autoplay="true" repeat="true"></audio>
+    
     <h1 id="title-text">Battle!</h1>
 
     <div id="battle-grid">
@@ -23,15 +25,18 @@
         <p id="computer-health"></p>
 
         <!-- ATTACK BUTTONS -->
-          <p id="player-health"></p>
-          <span></span>
-          <span></span>
-          <div id="player-attack">
+        <p id="player-health"></p>
+        <span></span>
+        <span></span>
+        <p id="player-attack"></p>
+        <span></span>
+        <span></span>
+        <div id="player-attack">
             <button onclick="AttackOne()" id="attack-one">Attack One</button>
             <button onclick="AttackTwo()" id="attack-two">Attack Two</button>
             <button onclick="AttackThree()" id="attack-three">Attack Three</button>
             <button onclick="AttackFour()" id="attack-four">Attack Four</button>
-          </div>
+        </div>
       </div>
     </div>
 

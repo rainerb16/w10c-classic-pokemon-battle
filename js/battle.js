@@ -2,8 +2,6 @@
 var playerSelection = Cookies.get("pokemon");
 var playerPokemon = document.getElementById("player-selection");
 playerPokemon.innerHTML = playerSelection;
-
-
 var battleWinner = document.getElementById("battle-winner");
 
 
@@ -18,10 +16,14 @@ var attackFourDamage;
 var winner;
 
 
+
+// Health Stats
 var computerHealth = document.getElementById("computer-health");
 computerHealth.innerHTML = gengarHealth + "/220";
 var playerHealth = document.getElementById("player-health");
 playerHealth.innerHTML = userHealth + "/250";
+
+
 
 
 // If Pikachu chosen
@@ -54,12 +56,14 @@ if(playerSelection === "Charmander") {
 }
 
 
+
 // Player Attacks
 function AttackOne() {
     gengarHealth = gengarHealth - attackOneDamage;
     computerHealth.innerHTML = gengarHealth + "/220";
     userHealth = userHealth - attackFourDamage;
     playerHealth.innerHTML = userHealth + "/250";
+
     if(gengarHealth <= 0) {
         battleWinner.innerHTML = "<h3>You Win!</h3>";
     } else if(userHealth <= 0){
@@ -71,11 +75,13 @@ function AttackOne() {
     Cookies.set("computer_health", gengarHealth);
 }
 
+
 function AttackTwo() {
     gengarHealth = gengarHealth - attackTwoDamage;
     computerHealth.innerHTML = gengarHealth + "/220";
     userHealth = userHealth - attackThreeDamage;
     playerHealth.innerHTML = userHealth + "/250";
+
     if(gengarHealth <= 0) {
         battleWinner.innerHTML = "<h3>You Win!</h3>";
     } else if(userHealth <= 0){
@@ -83,15 +89,18 @@ function AttackTwo() {
     } else {
         battleWinner.innerHTML = "<h3>Whoosh!</h3>";
     }
+
     Cookies.set("user_health", userHealth);
     Cookies.set("computer_health", gengarHealth);
 }
+
 
 function AttackThree() {
     gengarHealth = gengarHealth - attackThreeDamage;
     computerHealth.innerHTML = gengarHealth + "/220";
     userHealth = userHealth - attackOneDamage;
     playerHealth.innerHTML = userHealth + "/250";
+
     if(gengarHealth <= 0) {
         battleWinner.innerHTML = "<h3>You Win!</h3>";
     } else if(userHealth <= 0){
@@ -99,15 +108,18 @@ function AttackThree() {
     } else {
         battleWinner.innerHTML = "<h3>AAGGHH.</h3>";
     }
+
     Cookies.set("user_health", userHealth);
     Cookies.set("computer_health", gengarHealth);
 }
+
 
 function AttackFour() {
     gengarHealth = gengarHealth - attackFourDamage;
     computerHealth.innerHTML = gengarHealth + "/220";
     userHealth = userHealth - attackTwoDamage;
     playerHealth.innerHTML = userHealth + "/250";
+
     if(gengarHealth <= 0) {
         battleWinner.innerHTML = "<h3>You Win!</h3>";
     } else if(userHealth <= 0){
@@ -115,11 +127,21 @@ function AttackFour() {
     } else {
         battleWinner.innerHTML = "<h3>Let's Do This!</h3>";
     }
+
     Cookies.set("user_health", userHealth);
     Cookies.set("computer_health", gengarHealth);
 }
 
-// PLAY AGAIN
+
+
+// Audio
+var audioBattle = document.getElementById("battle-music")
+audioBattle.volume = 0.3;
+audioBattle.loop = true;
+
+
+
+// Play Again
 function playAgain(){
     document.getElementById("play-again");
     Cookies.remove("pokemon");

@@ -24,3 +24,7 @@ function charmanderClick() {
 
 // Gengar
 Cookies.set("computer_health", "220");
+
+// Audio
+var audioIntro = document.getElementById("intro-music")
+audioIntro.volume = 0.15;
