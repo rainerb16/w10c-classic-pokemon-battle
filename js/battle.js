@@ -2,14 +2,15 @@
 var playerSelection = Cookies.get("pokemon");
 var playerPokemon = document.getElementById("player-selection");
 playerPokemon.innerHTML = playerSelection;
+
+
 var battleWinner = document.getElementById("battle-winner");
 
-// Set Cookies - Points
 
 
 // Variables
-var gengarHealth = 220;
-var userHealth = 250;
+var gengarHealth = Cookies.get("computer_health");
+var userHealth = Cookies.get("user_health");
 var attackOneDamage;
 var attackTwoDamage;
 var attackThreeDamage;
@@ -21,7 +22,6 @@ var computerHealth = document.getElementById("computer-health");
 computerHealth.innerHTML = gengarHealth + "/220";
 var playerHealth = document.getElementById("player-health");
 playerHealth.innerHTML = userHealth + "/250";
-
 
 
 // If Pikachu chosen
@@ -67,6 +67,8 @@ function AttackOne() {
     } else {
         battleWinner.innerHTML = "<h3>Attack!</h3>";
     }
+    Cookies.set("user_health", userHealth);
+    Cookies.set("computer_health", gengarHealth);
 }
 
 function AttackTwo() {
@@ -81,6 +83,8 @@ function AttackTwo() {
     } else {
         battleWinner.innerHTML = "<h3>Whoosh!</h3>";
     }
+    Cookies.set("user_health", userHealth);
+    Cookies.set("computer_health", gengarHealth);
 }
 
 function AttackThree() {
@@ -95,21 +99,32 @@ function AttackThree() {
     } else {
         battleWinner.innerHTML = "<h3>AAGGHH.</h3>";
     }
+    Cookies.set("user_health", userHealth);
+    Cookies.set("computer_health", gengarHealth);
 }
 
 function AttackFour() {
     gengarHealth = gengarHealth - attackFourDamage;
     computerHealth.innerHTML = gengarHealth + "/220";
-
     userHealth = userHealth - attackTwoDamage;
     playerHealth.innerHTML = userHealth + "/250";
+    if(gengarHealth <= 0) {
+        battleWinner.innerHTML = "<h3>You Win!</h3>";
+    } else if(userHealth <= 0){
+        battleWinner.innerHTML = "<h3>You Lose!</h3>";
+    } else {
+        battleWinner.innerHTML = "<h3>Let's Do This!</h3>";
+    }
+    Cookies.set("user_health", userHealth);
+    Cookies.set("computer_health", gengarHealth);
 }
-
 
 // PLAY AGAIN
 function playAgain(){
     document.getElementById("play-again");
-    var windowHome = window.open("index.html", "_self");
     Cookies.remove("pokemon");
+    Cookies.remove("user_health");
+    Cookies.remove("computer_health");
+    var windowHome = window.open("index.html", "_self");
 }
 

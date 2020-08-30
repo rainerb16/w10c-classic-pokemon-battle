@@ -11,6 +11,8 @@
       }
 
       #player-attack {
+          display: grid;
+          grid-template-columns: 2fr 2fr;
           align-items: center;
           justify-items: center;
           margin: 5vh;
