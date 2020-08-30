@@ -9,10 +9,17 @@
   <title>Classic Pokemon Battle: Battle Time!</title>
 </head>
 <body>
-    <audio id="battle-music" src="audio/battle.mp3" autoplay="true" repeat="true"></audio>
+
+    <!-- AUDIO -->
+    <audio id="battle-music" src="audio/battle.mp3" autoplay="true" repeat="true" muted="true"></audio>
+    <button id="audio-unmute" onclick="audioUnmute()" type="button">UNMUTE to Play Music</button>
+    <button id="audio-mute" onclick="audioMute()" type="button">MUTE Music</button>
     
+    <!-- TITLE -->
     <h1 id="title-text">Battle!</h1>
 
+
+    <!-- BATTLE GRID / PLAYERS -->
     <div id="battle-grid">
         <div id="player-selection"></div>
         <h3>VS</h3>

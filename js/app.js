@@ -1,3 +1,21 @@
+// Audio
+var audioIntro = document.getElementById("intro-music")
+audioIntro.volume = 0.15;
+audioIntro.loop = true;
+
+function audioMute() {
+    audioIntro.muted = true;
+}
+
+function audioUnmute() {
+    audioIntro.muted = false;
+}
+
+function checkAudioMute() {
+    alert(audioIntro.muted);
+}
+
+
 // Pikachu Function
 function pikachuClick() {
   var playerPikachu = document.getElementById("pikachu");
@@ -24,7 +42,3 @@ function charmanderClick() {
 
 // Gengar
 Cookies.set("computer_health", "220");
-
-// Audio
-var audioIntro = document.getElementById("intro-music")
-audioIntro.volume = 0.15;

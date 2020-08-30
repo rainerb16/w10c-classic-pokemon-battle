@@ -9,13 +9,22 @@
   <title>Classic Pokemon Battle</title>
 </head>
 <body>
-    <audio id="intro-music" src="audio/battleintro.mp3" autoplay="true"></audio>
+
+    <!-- AUDIO -->
+    <audio id="intro-music" src="audio/battleintro.mp3" autoplay="true" muted="true"></audio>
+    <button id="audio-unmute" onclick="audioUnmute()" type="button">UNMUTE to Play Music</button>
+    <button id="audio-mute" onclick="audioMute()" type="button">MUTE Music</button>
+
+
+    <!-- TITLE -->
     <h1 id="title-text">CLASSIC <em id="pokemon-word">POKEMON</em> BATTLE</h1>
     <h1 id="eight-bit"><em>IN 8-BIT</em></h1>
     <img id="pokeball" src="https://thumbs.gfycat.com/GenerousTimelyBrontosaurus-max-1mb.gif" alt="Shaking 8-Bit PokeBall">
 
     <h2 id="choose-player">Choose your player:</h2>
 
+
+    <!-- PLAYER SELECTION -->
     <div id="select-player">
         <div onclick="pikachuClick()" id="pikachu">
             <img src="https://26.media.tumblr.com/tumblr_m3245olhHC1rrfi85o1_500.gif" alt="Pikachu with Lightening">

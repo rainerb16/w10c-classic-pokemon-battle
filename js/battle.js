@@ -139,6 +139,15 @@ var audioBattle = document.getElementById("battle-music")
 audioBattle.volume = 0.3;
 audioBattle.loop = true;
 
+function audioMute() {
+    audioBattle.muted = true;
+}
+
+function audioUnmute() {
+    audioBattle.muted = false;
+}
+
+
 
 
 // Play Again
