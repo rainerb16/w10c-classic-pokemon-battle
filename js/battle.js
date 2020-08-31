@@ -1,9 +1,23 @@
+// Audio
+var audioBattle = document.getElementById("battle-music")
+audioBattle.volume = 0.2;
+audioBattle.loop = true;
+
+function audioMute() {
+    audioBattle.muted = true;
+}
+
+function audioUnmute() {
+    audioBattle.muted = false;
+}
+
+
+
 // Player Selection
 var playerSelection = Cookies.get("pokemon");
 var playerPokemon = document.getElementById("player-selection");
 playerPokemon.innerHTML = playerSelection;
 var battleWinner = document.getElementById("battle-winner");
-
 
 
 // Variables
@@ -18,6 +32,17 @@ var attackMoveThree = document.getElementById("attack-three");
 var attackFourDamage;
 var attackMoveFour = document.getElementById("attack-four");
 var winner;
+var pikachuOne = document.getElementById("pikachu-one");
+var pikachuTwo = document.getElementById("pikachu-two");
+var pikachuThree = document.getElementById("pikachu-three");
+var jigglyOne = document.getElementById("jiggly-one");
+var jigglyTwo = document.getElementById("jiggly-two");
+var jigglyThree = document.getElementById("jiggly-three");
+var charOne = document.getElementById("char-main");
+var charTwo = document.getElementById("char-two");
+var audioWin = document.getElementById("audio-win");
+audioWin.volume = 0.2;
+var audioLose = document.getElementById("audio-lose");
 
 
 
@@ -44,6 +69,7 @@ if(playerSelection === "Pikachu") {
 }
 
 
+
 // If Jigglypuff chosen
 if(playerSelection === "Jigglypuff") {
     playerPokemon.innerHTML = "<img src='https://thumbs.gfycat.com/ClearGranularDuckling-small.gif' alt='Jigglypuff Jumping'>";
@@ -56,6 +82,7 @@ if(playerSelection === "Jigglypuff") {
     attackFourDamage = 10;
     attackMoveFour.innerHTML = "<p>Charm: 10 HP</p>";
 }
+
 
 
 // If Charmander chosen
@@ -80,10 +107,25 @@ function AttackOne() {
     userHealth = userHealth - attackFourDamage;
     playerHealth.innerHTML = userHealth + "/350";
 
+    if(playerSelection === "Pikachu") {
+        pikachuOne.play();
+    } else if(playerSelection === "Jigglypuff") {
+        jigglyOne.play();
+        jigglyOne.volume = 0.3;
+    } else {
+        charOne.play();
+        charOne.volume = 0.35;
+    }
+
+
     if(gengarHealth <= 0) {
         battleWinner.innerHTML = "<h3>You Win!</h3>";
+        audioWin.play();
+        audioBattle.muted = true;
     } else if(userHealth <= 0){
         battleWinner.innerHTML = "<h3>You Lose!</h3>";
+        audioLose.play();
+        audioBattle.muted = true;
     } else {
         battleWinner.innerHTML = "<h3>Attack!</h3>";
     }
@@ -92,16 +134,32 @@ function AttackOne() {
 }
 
 
+
 function AttackTwo() {
     gengarHealth = gengarHealth - attackTwoDamage;
     computerHealth.innerHTML = gengarHealth + "/375";
     userHealth = userHealth - attackThreeDamage;
     playerHealth.innerHTML = userHealth + "/350";
 
+    if(playerSelection === "Pikachu") {
+        pikachuTwo.play();
+    } else if(playerSelection === "Jigglypuff") {
+        jigglyTwo.play();
+        jigglyTwo.volume = 0.3;
+    } else {
+        charTwo.play();
+        charTwo.volume = 0.3;
+    }
+
+
     if(gengarHealth <= 0) {
         battleWinner.innerHTML = "<h3>You Win!</h3>";
+        audioWin.play();
+        audioBattle.muted = true;
     } else if(userHealth <= 0){
         battleWinner.innerHTML = "<h3>You Lose!</h3>";
+        audioLose.play();
+        audioBattle.muted = true;
     } else {
         battleWinner.innerHTML = "<h3>Whoosh!</h3>";
     }
@@ -111,16 +169,32 @@ function AttackTwo() {
 }
 
 
+
 function AttackThree() {
     gengarHealth = gengarHealth - attackThreeDamage;
     computerHealth.innerHTML = gengarHealth + "/375";
     userHealth = userHealth - attackOneDamage;
     playerHealth.innerHTML = userHealth + "/350";
 
+    if(playerSelection === "Pikachu") {
+        pikachuThree.play();
+    } else if(playerSelection === "Jigglypuff") {
+        jigglyThree.play();
+        jigglyThree.volume = 0.3;
+    } else {
+        charOne.play();
+        charOne.volume = 0.35;
+    }
+
+
     if(gengarHealth <= 0) {
         battleWinner.innerHTML = "<h3>You Win!</h3>";
+        audioWin.play();
+        audioBattle.muted = true;
     } else if(userHealth <= 0){
         battleWinner.innerHTML = "<h3>You Lose!</h3>";
+        audioLose.play();
+        audioBattle.muted = true;
     } else {
         battleWinner.innerHTML = "<h3>AAGGHH.</h3>";
     }
@@ -130,16 +204,33 @@ function AttackThree() {
 }
 
 
+
 function AttackFour() {
     gengarHealth = gengarHealth - attackFourDamage;
     computerHealth.innerHTML = gengarHealth + "/375";
     userHealth = userHealth - attackTwoDamage;
     playerHealth.innerHTML = userHealth + "/350";
 
+
+    if(playerSelection === "Pikachu") {
+        pikachuOne.play();
+    } else if(playerSelection === "Jigglypuff") {
+        jigglyTwo.play();
+        jigglyTwo.volume = 0.3;
+    } else {
+        charTwo.play();
+        charTwo.volume = 0.3;
+    }
+
+
     if(gengarHealth <= 0) {
         battleWinner.innerHTML = "<h3>You Win!</h3>";
+        audioWin.play();
+        audioBattle.muted = true;
     } else if(userHealth <= 0){
         battleWinner.innerHTML = "<h3>You Lose!</h3>";
+        audioLose.play();
+        audioBattle.muted = true;
     } else {
         battleWinner.innerHTML = "<h3>Let's Do This!</h3>";
     }
@@ -148,20 +239,6 @@ function AttackFour() {
     Cookies.set("computer_health", gengarHealth);
 }
 
-
-
-// Audio
-var audioBattle = document.getElementById("battle-music")
-audioBattle.volume = 0.3;
-audioBattle.loop = true;
-
-function audioMute() {
-    audioBattle.muted = true;
-}
-
-function audioUnmute() {
-    audioBattle.muted = false;
-}
 
 
 

@@ -1,6 +1,6 @@
 // Audio
 var audioIntro = document.getElementById("intro-music")
-audioIntro.volume = 0.15;
+audioIntro.volume = 0.12;
 audioIntro.loop = true;
 
 function audioMute() {
