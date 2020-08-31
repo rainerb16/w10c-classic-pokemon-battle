@@ -20,6 +20,11 @@ playerPokemon.innerHTML = playerSelection;
 var battleWinner = document.getElementById("battle-winner");
 
 
+if(playerPokemon.innerHTML == "undefined") {
+    playerPokemon.innerHTML = "<p>Error! Please press Play Again.</p>";
+    battleWinner.innerHTML = "<p>Error! Please press Play Again.</p>";
+}
+
 // Variables
 var gengarHealth = Cookies.get("computer_health");
 var userHealth = Cookies.get("user_health");
@@ -52,8 +57,10 @@ computerHealth.innerHTML = gengarHealth + "/375";
 var playerHealth = document.getElementById("player-health");
 playerHealth.innerHTML = userHealth + "/350";
 
-
-
+if(computerHealth.innerHTML == "undefined" + "/375" && playerHealth.innerHTML == "undefined" + "/350") {
+    computerHealth.innerHTML = "<p>Error!</p>";
+    playerHealth.innerHTML = "<p>Error!</p>";
+}
 
 // If Pikachu chosen
 if(playerSelection === "Pikachu") {
@@ -97,6 +104,7 @@ if(playerSelection === "Charmander") {
     attackFourDamage = 35;
     attackMoveFour.innerHTML = "<p>Scratch: 35 HP</p>";
 }
+
 
 
 
@@ -146,6 +154,7 @@ function AttackTwo() {
     } else if(playerSelection === "Jigglypuff") {
         jigglyTwo.play();
         jigglyTwo.volume = 0.3;
+
     } else {
         charTwo.play();
         charTwo.volume = 0.3;
@@ -238,7 +247,6 @@ function AttackFour() {
     Cookies.set("user_health", userHealth);
     Cookies.set("computer_health", gengarHealth);
 }
-
 
 
 
