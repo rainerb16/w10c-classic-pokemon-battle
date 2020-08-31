@@ -1,7 +1,11 @@
 // Audio
+var audioOn = Cookies.get("music");
 var audioBattle = document.getElementById("battle-music")
 audioBattle.volume = 0.2;
 audioBattle.loop = true;
+if(audioOn == "on") {
+    audioBattle.muted = false;
+}
 
 function audioMute() {
     audioBattle.muted = true;
@@ -256,6 +260,7 @@ function playAgain(){
     Cookies.remove("pokemon");
     Cookies.remove("user_health");
     Cookies.remove("computer_health");
+    Cookies.remove("music");
     var windowHome = window.open("index.html", "_self");
 }
 

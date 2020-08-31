@@ -9,11 +9,9 @@ function audioMute() {
 
 function audioUnmute() {
     audioIntro.muted = false;
+    Cookies.set("music", "on");
 }
 
-function checkAudioMute() {
-    alert(audioIntro.muted);
-}
 
 
 // Pikachu Function
