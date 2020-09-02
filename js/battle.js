@@ -66,6 +66,7 @@ if(computerHealth.innerHTML == "undefined" + "/375" && playerHealth.innerHTML ==
     playerHealth.innerHTML = "<p>Error!</p>";
 }
 
+
 // If Pikachu chosen
 if(playerSelection === "Pikachu") {
     playerPokemon.innerHTML = "<img src='https://26.media.tumblr.com/tumblr_m3245olhHC1rrfi85o1_500.gif' alt='Pikachu with Lightening'>";
@@ -110,14 +111,30 @@ if(playerSelection === "Charmander") {
 }
 
 
+// Check Win
+function checkWin() {
+    if(gengarHealth <= 0) {
+        battleWinner.innerHTML = "<h3>You Win!</h3>";
+        gengarHealth = 0;
+        audioWin.play();
+        audioBattle.muted = true;
+        return;
+    } else if(userHealth <= 0){
+        battleWinner.innerHTML = "<h3>You Lose!</h3>";
+        userHealth = 0;
+        audioLose.play();
+        audioBattle.muted = true;
+        return;
+    } else {
+        battleWinner.innerHTML = "<h3>Battle!</h3>";
+    }
+}
 
 
 // Player Attacks
 function AttackOne() {
     gengarHealth = gengarHealth - attackOneDamage;
     userHealth = userHealth - attackFourDamage;
-    computerHealth.innerHTML = gengarHealth + "/375";
-    playerHealth.innerHTML = userHealth + "/350";
 
     if(playerSelection === "Pikachu") {
         pikachuOne.play();
@@ -129,17 +146,9 @@ function AttackOne() {
         charOne.volume = 0.35;
     }
 
-    if(computerHealth <= 0) {
-        battleWinner.innerHTML = "<h3>You Win!</h3>";
-        audioWin.play();
-        audioBattle.muted = true;
-    } else if(userHealth <= 0){
-        battleWinner.innerHTML = "<h3>You Lose!</h3>";
-        audioLose.play();
-        audioBattle.muted = true;
-    } else {
-        battleWinner.innerHTML = "<h3>Attack!</h3>";
-    }
+    checkWin()
+    computerHealth.innerHTML = gengarHealth + "/375";
+    playerHealth.innerHTML = userHealth + "/350";
 
     Cookies.set("user_health", userHealth);
     Cookies.set("computer_health", gengarHealth);
@@ -147,11 +156,10 @@ function AttackOne() {
 
 
 
+
 function AttackTwo() {
     gengarHealth = gengarHealth - attackTwoDamage;
-    computerHealth.innerHTML = gengarHealth + "/375";
     userHealth = userHealth - attackThreeDamage;
-    playerHealth.innerHTML = userHealth + "/350";
 
     if(playerSelection === "Pikachu") {
         pikachuTwo.play();
@@ -164,18 +172,9 @@ function AttackTwo() {
         charTwo.volume = 0.3;
     }
 
-
-    if(gengarHealth <= 0) {
-        battleWinner.innerHTML = "<h3>You Win!</h3>";
-        audioWin.play();
-        audioBattle.muted = true;
-    } else if(userHealth <= 0){
-        battleWinner.innerHTML = "<h3>You Lose!</h3>";
-        audioLose.play();
-        audioBattle.muted = true;
-    } else {
-        battleWinner.innerHTML = "<h3>Whoosh!</h3>";
-    }
+    checkWin()
+    computerHealth.innerHTML = gengarHealth + "/375";
+    playerHealth.innerHTML = userHealth + "/350";
 
     Cookies.set("user_health", userHealth);
     Cookies.set("computer_health", gengarHealth);
@@ -185,9 +184,7 @@ function AttackTwo() {
 
 function AttackThree() {
     gengarHealth = gengarHealth - attackThreeDamage;
-    computerHealth.innerHTML = gengarHealth + "/375";
     userHealth = userHealth - attackOneDamage;
-    playerHealth.innerHTML = userHealth + "/350";
 
     if(playerSelection === "Pikachu") {
         pikachuThree.play();
@@ -199,18 +196,9 @@ function AttackThree() {
         charOne.volume = 0.35;
     }
 
-
-    if(gengarHealth <= 0) {
-        battleWinner.innerHTML = "<h3>You Win!</h3>";
-        audioWin.play();
-        audioBattle.muted = true;
-    } else if(userHealth <= 0){
-        battleWinner.innerHTML = "<h3>You Lose!</h3>";
-        audioLose.play();
-        audioBattle.muted = true;
-    } else {
-        battleWinner.innerHTML = "<h3>AAGGHH.</h3>";
-    }
+    checkWin()
+    computerHealth.innerHTML = gengarHealth + "/375";
+    playerHealth.innerHTML = userHealth + "/350";
 
     Cookies.set("user_health", userHealth);
     Cookies.set("computer_health", gengarHealth);
@@ -220,9 +208,7 @@ function AttackThree() {
 
 function AttackFour() {
     gengarHealth = gengarHealth - attackFourDamage;
-    computerHealth.innerHTML = gengarHealth + "/375";
     userHealth = userHealth - attackTwoDamage;
-    playerHealth.innerHTML = userHealth + "/350";
 
 
     if(playerSelection === "Pikachu") {
@@ -235,23 +221,13 @@ function AttackFour() {
         charTwo.volume = 0.3;
     }
 
-
-    if(gengarHealth <= 0) {
-        battleWinner.innerHTML = "<h3>You Win!</h3>";
-        audioWin.play();
-        audioBattle.muted = true;
-    } else if(userHealth <= 0){
-        battleWinner.innerHTML = "<h3>You Lose!</h3>";
-        audioLose.play();
-        audioBattle.muted = true;
-    } else {
-        battleWinner.innerHTML = "<h3>Let's Do This!</h3>";
-    }
-
+    checkWin()
+    computerHealth.innerHTML = gengarHealth + "/375";
+    playerHealth.innerHTML = userHealth + "/350";
+    
     Cookies.set("user_health", userHealth);
     Cookies.set("computer_health", gengarHealth);
 }
-
 
 
 // Play Again
