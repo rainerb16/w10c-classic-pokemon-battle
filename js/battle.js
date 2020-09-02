@@ -115,8 +115,8 @@ if(playerSelection === "Charmander") {
 // Player Attacks
 function AttackOne() {
     gengarHealth = gengarHealth - attackOneDamage;
-    computerHealth.innerHTML = gengarHealth + "/375";
     userHealth = userHealth - attackFourDamage;
+    computerHealth.innerHTML = gengarHealth + "/375";
     playerHealth.innerHTML = userHealth + "/350";
 
     if(playerSelection === "Pikachu") {
@@ -129,8 +129,7 @@ function AttackOne() {
         charOne.volume = 0.35;
     }
 
-
-    if(gengarHealth <= 0) {
+    if(computerHealth <= 0) {
         battleWinner.innerHTML = "<h3>You Win!</h3>";
         audioWin.play();
         audioBattle.muted = true;
@@ -141,6 +140,7 @@ function AttackOne() {
     } else {
         battleWinner.innerHTML = "<h3>Attack!</h3>";
     }
+
     Cookies.set("user_health", userHealth);
     Cookies.set("computer_health", gengarHealth);
 }
