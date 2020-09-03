@@ -120,8 +120,8 @@ function checkWin() {
         audioBattle.muted = true;
         return;
     } else if(userHealth <= 0){
-        battleWinner.innerHTML = "<h3>You Lose!</h3>";
         userHealth = 0;
+        battleWinner.innerHTML = "<h3>You Lose!</h3>";
         audioLose.play();
         audioBattle.muted = true;
         return;

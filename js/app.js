@@ -5,6 +5,7 @@ audioIntro.loop = true;
 
 function audioMute() {
     audioIntro.muted = true;
+    Cookies.set("music", "off");
 }
 
 function audioUnmute() {
