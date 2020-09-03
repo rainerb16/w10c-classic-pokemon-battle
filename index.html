@@ -10,39 +10,42 @@
 </head>
 <body>
 
-    <!-- AUDIO -->
-    <audio id="intro-music" src="audio/battleintro.mp3" autoplay="true" muted="true" repeat="true"></audio>
-    <button id="audio-unmute" onclick="audioUnmute()" type="button">UNMUTE</button>
-    <button id="audio-mute" onclick="audioMute()" type="button">MUTE</button>
+    <!-- MOBILE SCREEN -->
+    <p id="mobile-screen">SORRY!<br><br> Please use a desktop or laptop computer to play...</p>
+
+        <!-- AUDIO -->
+        <audio id="intro-music" src="audio/battleintro.mp3" autoplay="true" muted="true" repeat="true"></audio>
+        <button id="audio-unmute" onclick="audioUnmute()" type="button">UNMUTE</button>
+        <button id="audio-mute" onclick="audioMute()" type="button">MUTE</button>
 
 
-    <!-- TITLE -->
-    <h1 id="title-text">CLASSIC<img id="logo" src="images/logo.png" alt="">BATTLE</h1>
-    <h1 id="eight-bit"><em>IN 8-BIT</em></h1>
-    <img id="pokeball" src="https://thumbs.gfycat.com/GenerousTimelyBrontosaurus-max-1mb.gif" alt="Shaking 8-Bit PokeBall">
+        <!-- TITLE -->
+        <h1 id="title-text">CLASSIC<img id="logo" src="images/logo.png" alt="">BATTLE</h1>
+        <h1 id="eight-bit"><em>IN 8-BIT</em></h1>
+        <img id="pokeball" src="https://thumbs.gfycat.com/GenerousTimelyBrontosaurus-max-1mb.gif" alt="Shaking 8-Bit PokeBall">
 
-    <h2 id="choose-player">Choose your player:</h2>
+        <h2 id="choose-player">Choose your player:</h2>
 
 
-    <!-- PLAYER SELECTION -->
-    <div id="select-player">
-        <div onclick="pikachuClick()" id="pikachu">
-            <img src="https://26.media.tumblr.com/tumblr_m3245olhHC1rrfi85o1_500.gif" alt="Pikachu with Lightening">
-            <h3 class="player-title">PIKACHU</h3>
+        <!-- PLAYER SELECTION -->
+        <div id="select-player">
+            <div onclick="pikachuClick()" id="pikachu">
+                <img src="https://26.media.tumblr.com/tumblr_m3245olhHC1rrfi85o1_500.gif" alt="Pikachu with Lightening">
+                <h3 class="player-title">PIKACHU</h3>
+            </div>
+
+            <div onclick="jigglypuffClick()" id="jigglypuff">
+                <img src="https://thumbs.gfycat.com/ClearGranularDuckling-small.gif" alt="Jigglypuff Jumping">
+                <h3 class="player-title">JIGGLYPUFF</h3>
+            </div>
+
+            <div onclick="charmanderClick()" id="charmander">
+                <img src="https://thumbs.gfycat.com/EcstaticGloomyCavy-small.gif" alt="Charmander Bouncing">
+                <h3 class="player-title">CHARMANDER</h3>
+            </div>
         </div>
-
-        <div onclick="jigglypuffClick()" id="jigglypuff">
-            <img src="https://thumbs.gfycat.com/ClearGranularDuckling-small.gif" alt="Jigglypuff Jumping">
-            <h3 class="player-title">JIGGLYPUFF</h3>
-        </div>
-
-        <div onclick="charmanderClick()" id="charmander">
-            <img src="https://thumbs.gfycat.com/EcstaticGloomyCavy-small.gif" alt="Charmander Bouncing">
-            <h3 class="player-title">CHARMANDER</h3>
-        </div>
-      </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="js/app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script src="js/app.js"></script>
 </body>
 </html>

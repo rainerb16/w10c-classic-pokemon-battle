@@ -71,99 +71,111 @@ button {
   overflow-wrap: break-word;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+#audio-mute, #audio-unmute, #title-text, #logo, #eight-bit, #pokeball, #choose-player, #select-player, img, .player-title {
+  display: none;
 }
 
-body {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
+#mobile-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 26px;
+  text-align: center;
   font-family: 'Press Start 2P', cursive;
-  background-color: #f8f8f8;
+  margin-top: 50vw;
+  line-height: 8vw;
 }
 
-#audio-mute {
-  position: absolute;
-  width: 10%;
-  font-size: 10px;
-  padding: 10px;
-  background-color: white;
-  -webkit-box-shadow: 4px 0px 6px grey;
-          box-shadow: 4px 0px 6px grey;
-}
-
-#audio-unmute {
-  position: absolute;
-  margin-top: 6vh;
-  width: 10%;
-  font-size: 10px;
-  padding: 10px;
-  background-color: white;
-  -webkit-box-shadow: 4px 0px 6px grey;
-          box-shadow: 4px 0px 6px grey;
-}
-
-#title-text {
-  margin: 0vw 0vw 5vw 15vw;
-  font-size: 38px;
-  text-decoration: underline;
-  font-family: 'Russo One', sans-serif;
-  letter-spacing: 2px;
-  color: red;
-}
-
-#title-text #logo {
-  width: 30%;
-  padding: 20px;
-  margin-top: 10px;
-}
-
-#eight-bit {
-  color: red;
-  font-size: 22px;
-  text-decoration: underline;
-}
-
-#pokeball {
-  width: 5%;
-  margin-top: 3vh;
-}
-
-#choose-player {
-  letter-spacing: 2px;
-  font-size: 24px;
-  margin: 3vw 0vw 7vw 0vw;
-}
-
-#select-player {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-  margin: 0vw 3vw 3vw 3vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  padding: 20px;
-  text-align: center;
-}
-
-#select-player img {
-  width: 65%;
-  padding: 5px;
-}
-
-#select-player .player-title {
-  padding: 15px;
-  font-size: 18px;
-  text-align: center;
+@media only screen and (min-width: 1020px) {
+  #audio-mute, #audio-unmute, #title-text, #logo, #eight-bit, #pokeball, #choose-player, #select-player, img, .player-title {
+    display: inline-block;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #f8f8f8;
+  }
+  #mobile-screen {
+    display: none;
+  }
+  #audio-mute {
+    position: absolute;
+    width: 10%;
+    font-size: 10px;
+    padding: 10px;
+    background-color: white;
+    -webkit-box-shadow: 4px 0px 6px grey;
+            box-shadow: 4px 0px 6px grey;
+  }
+  #audio-unmute {
+    position: absolute;
+    margin-top: 6vh;
+    width: 10%;
+    font-size: 10px;
+    padding: 10px;
+    background-color: white;
+    -webkit-box-shadow: 4px 0px 6px grey;
+            box-shadow: 4px 0px 6px grey;
+  }
+  #title-text {
+    margin: 0vw 0vw 5vw 15vw;
+    font-size: 38px;
+    text-decoration: underline;
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 2px;
+    color: red;
+  }
+  #title-text #logo {
+    width: 30%;
+    padding: 20px;
+    margin-top: 10px;
+  }
+  #eight-bit {
+    color: red;
+    font-size: 22px;
+    text-decoration: underline;
+  }
+  #pokeball {
+    width: 5%;
+    margin-top: 3vh;
+  }
+  #choose-player {
+    letter-spacing: 2px;
+    font-size: 24px;
+    margin: 3vw 0vw 7vw 0vw;
+  }
+  #select-player {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    margin: 0vw 3vw 3vw 3vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+    padding: 20px;
+    text-align: center;
+  }
+  #select-player img {
+    width: 65%;
+    padding: 5px;
+  }
+  #select-player .player-title {
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */
