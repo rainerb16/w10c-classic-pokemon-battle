@@ -2,6 +2,7 @@
 var audioIntro = document.getElementById("intro-music")
 audioIntro.volume = 0.12;
 audioIntro.loop = true;
+audioIntro.autoplay = true;
 
 function audioMute() {
     audioIntro.muted = true;
